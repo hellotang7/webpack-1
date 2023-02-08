@@ -1,9 +1,28 @@
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[index].[contenthash].js',
     },
+     plugins: [new HtmlwebpackPlugin(
+        {
+      title: '写代码了',
+      template: 'src/assets/index.html'
+    })],
+    module:{ 
+       rules:[
+        {
+          test: /\.css$/i,
+          use: ['style-loader','css-loader'],
+        },
+      ]
+    }
 };
+
+
+
+
