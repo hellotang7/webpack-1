@@ -15,6 +15,20 @@ module.exports = {
     module: {
       rules: [
         {
+            test:/\.(png|svg|jpg|gif)$/,
+            use:["file-loader"]
+        },
+
+        {
+            test: /\.styl$/,
+            loader: ['style-loader','css-loader','stylus-loader']
+        },
+
+        {
+            test: /\.less$/,
+            loader: ['style-loader','css-loader','less-loader'],
+        },      
+        {
           test: /\.scss$/i,
           use: [ 
             'style-loader',
@@ -22,7 +36,7 @@ module.exports = {
             {
                 loader:"sass-loader",
                 options:{
-                    implementaton:require('dart-sass')
+                    implementation:require('dart-sass')
                 },
             },
           ],
