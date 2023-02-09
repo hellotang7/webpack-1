@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "rimraf dist && webpack",
+    "build": "rimraf dist && webpack --config webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
- "keywords": [],
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+   "devDependencies": {
     "css-loader": "^3.2.0",
     "dart-sass": "^1.23.7",
     "file-loader": "^5.0.2",
