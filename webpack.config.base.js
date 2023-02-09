@@ -11,7 +11,24 @@ module.exports = {
          title: '写代码了',
          template: 'src/assets/index.html'
       })    
-    ]
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.scss$/i,
+          use: [ 
+            'style-loader',
+            "css-loader",
+            {
+                loader:"sass-loader",
+                options:{
+                    implementaton:require('dart-sass')
+                },
+            },
+          ],
+        },
+      ],
+    },
 };
 
 
